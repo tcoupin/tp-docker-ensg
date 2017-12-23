@@ -1,0 +1,8 @@
+site_name: TP Docker à l'ENSG
+site_url: https://docker-ensg.readthedocs.io
+repo_url: https://github.com/tcoupin/tp-docker-ensg/
+site_description: Les TP pour des cours Docker à l'ENSG
+site_author: Thibault Coupin
+pages:
+  - Home: index.md
+theme: readthedocs

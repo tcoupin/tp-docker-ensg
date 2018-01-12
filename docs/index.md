@@ -18,9 +18,9 @@ La durée de cette formation est de 6 jours.
     - Présentation
     - Le docker-compose.yml
     - Les commandes
-4. [Docker en cluster avec le mode swarm](projet-swarm) (1/2 journée)
+4. [Docker en cluster avec le mode swarm ](docker-swarm) (1/2 journée)
     - Concepts
     - Noeuds
     - Service
     - Stack
-5. [Projet](projet-swarm) (3,5 jours)
+5. [Le projet](projet-swarm) (3,5 jours)

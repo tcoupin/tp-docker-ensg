@@ -6,13 +6,16 @@ site_author: Thibault Coupin
 pages:
   - Accueil: index.md
   - Présentation ASI : asi.md
-  - Docker Engine: 
+  - Docker Engine:
     - "Présentation": docker-engine.md
     - "Mise en place de l'environnement": engine/install.md
     - "Les TPs": engine/tp.md
-  - Docker Compose: 
+  - Docker Compose:
     - "Présentation": docker-compose.md
     - "Installation": compose/install.md
     - "Les TPs": compose/tp.md
-  - "Projet swarm": projet-swarm.md
+  - Docker swarm: docker-swarm.md
+  - Le projet: projet-swarm.md
+  - Récréations:
+    - Load-balancing: recreation/load-balancing.md
 theme: readthedocs

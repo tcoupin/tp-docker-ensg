@@ -1,0 +1,40 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/contrib-stretch64"
+
+  # config.vm.box_check_update = false
+
+  #config.vm.network "forwarded_port", guest: 2049, host: 2049
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "512"
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y glusterfs-server avahi-daemon libnss-mdns
+    mkdir /localstorage
+    gluster pool list
+  SHELL
+
+  (1..3).each do |i|
+    config.vm.define "node#{i}" do |node|
+      node.vm.network "private_network", ip: "192.168.242.1#{i}"
+      node.vm.hostname = "node#{i}"
+    end
+  end
+  config.vm.define "node0" do |zero|
+    zero.vm.network "private_network", ip: "192.168.242.10"
+    zero.vm.hostname = "node0"
+    zero.vm.provision "shell", inline: <<-SHELL
+      gluster peer probe node1.local
+      gluster peer probe node2.local
+      gluster peer probe node3.local
+      gluster volume create myvolume replica 2 node0.local:/localstorage node1.local:/localstorage node2.local:/localstorage node3.local:/localstorage force
+      gluster volume start myvolume
+      gluster volume set myvolume nfs.disable off
+    SHELL
+  end  
+end

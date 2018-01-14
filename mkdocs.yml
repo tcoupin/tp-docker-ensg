@@ -18,4 +18,5 @@ pages:
   - Le projet: projet-swarm.md
   - Récréations:
     - Load-balancing: recreation/load-balancing.md
+    - GlusterFS: recreation/glusterfs.md
 theme: readthedocs

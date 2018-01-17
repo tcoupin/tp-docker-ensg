@@ -8,6 +8,7 @@ Nous allons utiliser Docker dans un environnement Linux avec la distribution Ubu
 ## Variante
 
 Docker Engine est disponible en 2 variantes :
+
 - CE : *community edition* qui est la version gratuite que nous allons utiliser ;
 - EE : *entreprise edition* qui est plus évoluée avec des fonctionnalités supplémentaires et une certification de fonctionnement sur certain matériel.
 

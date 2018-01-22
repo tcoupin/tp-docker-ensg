@@ -23,7 +23,7 @@ La commande par défaut de cette image affiche un message confirmant la bonne in
 ## Container
 
 - Démarrez un bash interactif de l'image debian, observez le nom d'hôte apparent dans le conteneur
-- Testez les options `-d`, `-w`, `-h` et `--name` 
+- Testez les options `-d`, `-w`, `-h` et `--name`
 
 ## Volumes
 
@@ -31,7 +31,7 @@ La commande par défaut de cette image affiche un message confirmant la bonne in
 - Démarrez un bash interactif avec un volume docker sur `/data`, créer un fichier avec la commande `touch /data/toto`
 - Affichez la liste des volumes
 - Détruisez et relancez le même conteneur, observez le contenu de `/data`
-- Démarrez un second conteneur identique et afficher le contenu de `/data`. 
+- Démarrez un second conteneur identique et afficher le contenu de `/data`.
 - Testez l'option `-v` de la commande `docker rm`
 
 ## Réseau
@@ -43,7 +43,14 @@ La commande par défaut de cette image affiche un message confirmant la bonne in
 - Relancer un conteneur déclarant l'exposition du port 80 (option `-p 80`), utilisez la commande `docker container port` pour connaître le port d'exposition, tentez d'accéder au serveur du voisin
 - Cette fois-ci, utilisez l'option `-p` pour exposer le port 80 du conteneur sur le port 8080 de la machine hôte.
 
-# TP1 : un serveur nextcloud
+# TP1 : un dockerfile pour Geoserver
+
+Ecrire un dockerfile pour créer une image de Geoserver 2.12, basée sur l'image `tomcat`.
+Documentation utile : [http://docs.geoserver.org/2.12.1/user/installation/war.html#installation-war](http://docs.geoserver.org/2.12.1/user/installation/war.html#installation-war).
+
+***Le Dockerfile est à rendre pour la [notation](/notation).***
+
+# TP2 : un serveur nextcloud
 
 Le but est de mettre en place NextCloud, un gestionnaire de fichier.
 L'image à utiliser est nextcloud, disponible sur [https://hub.docker.com/_/nextcloud/](https://hub.docker.com/_/nextcloud/). Cette page contient beaucoup de détails que vous pouvez trouver dans les métadonnées de l'image.
@@ -58,8 +65,3 @@ L'image à utiliser est nextcloud, disponible sur [https://hub.docker.com/_/next
 
 - Lancer un conteneur MySQL
 - Recréez le conteneur nextcloud avec les bonnes options pour qu'à la configuration, vous puissiez lui dire d'utiliser la base de donnée mise en place.
-
-# TP3 : un dockerfile pour Geoserver
-
-Ecrire un dockerfile pour créer une image de Geoserver 2.12, basée sur l'image `tomcat`.
-Documentation utile : [http://docs.geoserver.org/2.12.1/user/installation/war.html#installation-war](http://docs.geoserver.org/2.12.1/user/installation/war.html#installation-war).

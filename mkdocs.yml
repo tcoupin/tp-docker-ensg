@@ -19,4 +19,5 @@ pages:
   - Récréations:
     - Load-balancing: recreation/load-balancing.md
     - GlusterFS: recreation/glusterfs.md
+  - Notation: notation.md
 theme: readthedocs

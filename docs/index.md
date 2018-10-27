@@ -1,8 +1,8 @@
-Ce support est fourni dans le cadre du cours d'architecture des systèmes d'informations donnés à l'ENSG du 24 janvier au 1er février 2018 par Thibault Coupin.
+Ce support est fourni dans le cadre du cours d'architecture des systèmes d'informations, partie Docker, donné à l'ENSG par Thibault Coupin.
 
 Vous trouverez ici les liens vers les présentations, les documents pour les travaux pratiques et des liens vers quelques exemples.
 
-La durée de cette formation est de 6 jours.
+Partie 1 : TSI-[CG],  26 et 27 novembre 2018
 
 1. [Architecture des systèmes d'informations](asi) (1/2 journée)
     - Rappel sur les SI
@@ -18,6 +18,9 @@ La durée de cette formation est de 6 jours.
     - Présentation
     - Le docker-compose.yml
     - Les commandes
+
+Partie 2 : TSI-C, 4 au 7 février 2019
+
 4. [Docker en cluster avec le mode swarm ](docker-swarm) (1/2 journée)
     - Concepts
     - Noeuds

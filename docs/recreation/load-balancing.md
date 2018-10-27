@@ -17,9 +17,9 @@ Parmi les LB disponibles, on peut citer :
 Le dépôt [tcoupin/slow-whoami](https://github.com/tcoupin/slow-whoami) permet de déployer une application simpliste dont le but est de répondre de plus en plus lentement au fur et à mesure de la montée en charge.
 
 * Cloner le dépôt
-* Déployer l'application avec la commande `docker-compose up  -d`
+* Déployer l'application avec la commande `docker-compose -f docker-compose.lb.yml up  -d`
 * Utiliser un utilitaire de benchmark pour simuler la charge (par exemple `siege http://127.0.0.1/ping`)
-* Ajouter des instances de l'application pour voir si le temps de réponse évolue...
+* Ajouter des instances de l'application pour voir si le temps de réponse évolue `docker-compose -f docker-compose.lb.yml scale app=2`
 
 Liens utiles :
 

@@ -1,6 +1,3 @@
-
-# Mise en place de l'environnement
-
 Nous allons utiliser Docker dans un environnement Linux avec la distribution Ubuntu. 
 
 > Le projet [PWD](http://play-with-docker.com) permet également de tester Docker sans l'installer au travers d'une interface web. Les sessions de travail durent 4h et la vitesse de l'interface dépend souvent de l'activité des autres utilisateurs...

@@ -1,5 +1,3 @@
-## Installation
-
 La procédure est fournie dans la documentation : [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/).
 
 Pour résumer :

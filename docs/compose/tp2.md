@@ -1,13 +1,13 @@
-# TP 1 : Reprendre l'exemple précédent
+# TP2 : Multi-composants
 
-- Transcrivez [l'étape 2 du TP 1](/engine/tp/#tp1-un-serveur-nextcloud) dans un fichier docker-compose.yml.
+- Transcrivez [l'étape 3 du TP2](/engine/tp2/#etape-3-utilisation-dun-reseau) dans un fichier docker-compose.yml.
 - Testez la commande `docker-compose scale` pour déployer une seconde instance de nextcloud, que se passe-t-il ?
 
 
-# Récréation : le load-balancing en pratique
+## Récréation : le load-balancing en pratique
 
 [Voir ici...](/recreation/load-balancing/)
 
-# TP 2 : le loadbalancing en pratique
+## Le loadbalancing en pratique
 
 Modifiez votre docker-compose.yml pour permettre le scalling de nextcloud.

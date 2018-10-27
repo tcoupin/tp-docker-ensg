@@ -3,21 +3,26 @@ site_url: https://docker-ensg.readthedocs.io
 repo_url: https://github.com/tcoupin/tp-docker-ensg/
 site_description: Les TP pour des cours Docker à l'ENSG
 site_author: Thibault Coupin
-pages:
+nav:
   - Accueil: index.md
   - Présentation ASI : asi.md
   - Docker Engine:
     - "Présentation": docker-engine.md
     - "Mise en place de l'environnement": engine/install.md
-    - "Les TPs": engine/tp.md
+    - "Les TPs":
+      - "TP0 : Hello-world": engine/tp0.md
+      - "TP1 : Dockerfiles": engine/tp1.md
+      - "TP2 : Déployer une application": engine/tp2.md
   - Docker Compose:
     - "Présentation": docker-compose.md
     - "Installation": compose/install.md
-    - "Les TPs": compose/tp.md
+    - "Les TPs":
+      - compose/tp1.md
+      - compose/tp2.md
   - Docker swarm: docker-swarm.md
   - Le projet: projet-swarm.md
   - Récréations:
     - Load-balancing: recreation/load-balancing.md
     - GlusterFS: recreation/glusterfs.md
   - Notation: notation.md
-theme: readthedocs
+theme: material

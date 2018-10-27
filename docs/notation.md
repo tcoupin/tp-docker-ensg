@@ -1,12 +1,21 @@
 # Grille de notation
 
-## Note personnelle (/10)
+## Groupe TSI-G
 
-- TP comportement global /4
+- QCM /12
 - TP Docker Engine /4 : ***rendre le Dockerfile à la fin du TP***
+- TP comportement global /4
+
+## Groupe TSI-C
+
+### Note personnelle (/10)
+
+- QCM /4
+- TP comportement global /2
+- TP Docker Engine /2 : ***rendre le Dockerfile à la fin du TP***
 - Participation au projet de groupe /2
 
-## Note de groupe (/10)
+### Note de groupe (/10)
 
 - Organisation (/2) *
 - Architecture (/2) *

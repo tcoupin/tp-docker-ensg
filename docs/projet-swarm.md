@@ -44,3 +44,10 @@ Un dépôt Github :
 ...
 
 La contribution de chacun doit pouvoir être évaluée au travers des commit du dépôt.
+
+
+## Outils
+
+- Benchmark et simulation de trafic : Jmeter
+- monitoring : suite influxdb, telegraf, grafana. Traefik branché sur influxdb
+- test : bats ?

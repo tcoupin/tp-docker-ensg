@@ -1,5 +1,7 @@
 # Le projet
 
+**Projet 2018-2019, non mis à jour!!** 
+
 ## Objectifs
 
 - Mise en place d'un cluster swarm à architecture mixte (ARM + x86_64)

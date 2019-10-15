@@ -17,8 +17,8 @@ Si l'image n'est pas disponible en local, elle sera téléchargée sans avoir à
 - Observez que le conteneur est bien existant et à l'arrêt
 
 ```shell
-docker ps
-docker ps -a
+docker container ls
+docker container ls -a
 ```
 
 - Supprimez le
@@ -32,13 +32,18 @@ docker container rm NAME
 
 ### Les images
 
-- Affichez la liste des images, supprimez l'image `hello-world`
+- Affichez la liste des images
+```shell
+docker image ls
+```
+
+- supprimez l'image `hello-world`
 
 ```shell
 docker image rm hello-world
 ```
 
-- Téléchargez l'image debian 9 (pour trouver la bonne image et le bon tag, rendez-vous sur hub.docker.com)
+- Téléchargez l'image debian 10
 
 ```shell
 docker image pull IMAGE[:TAG]
@@ -59,6 +64,10 @@ docker container run -i -t IMAGE[:TAG] bash
 ```
 
 - dans un autre terminal, observer les listes des conteneurs en fonctionnement
+
+```shell
+docker container ls
+```
 
 - Stopper le conteneur, le redémarrer et se rattacher au bash. A chaque étape, observez la liste des conteneurs et leur état
 
@@ -101,7 +110,7 @@ docker volume ls
 
 - Détruisez et relancez le même conteneur, observez le contenu de `/data`
 - Démarrez un second conteneur identique et afficher le contenu de `/data`.
-- Cherchez dans l'aide des informations sur l'option' `-v` et testez là
+- Cherchez dans l'aide des informations sur l'option' `-v` de la commande `docker container rm` et testez là
 
 ```shell
 docker container rm --help

@@ -12,7 +12,19 @@
 L'image à utiliser ici est `httpd` :
 
 1. Lancez un conteneur exposant le port `80` du conteneur sur le port `8080` de la machine. Qu'affiche la page `http://127.0.0.1:8080` ?
+        
+		docker run --name serveur_web -p 8080:80 httpd
+		
 2. Cette image utilise le contenu du dossier `/usr/local/apache2/htdocs/` pour répondre aux requêtes. Relancez un nouveau conteneur en utilisant un volume hôte (un dossier de la machine).
+
+		# Je vais utiliser le dossier $HOME/mondossier, je le créé
+		mkdir $HOME/mondossier
+		# Un peu de ménage
+		docker stop serveur_web
+		docker rm serveur_web
+		# Nouveau conteneur
+		docker run --name serveur_web -p 8080:80 -v $HOME/mondossier:/usr/local/apache2/htdocs/ httpd
+
 3. Dans ce dossier placez le fichier index.html et observez le résultat :
         
         <body style="background-color: yellow;">
@@ -34,7 +46,16 @@ L'image à utiliser ici est `httpd` :
         </body>
 
 2. ça ne fonctionne pas... Pourquoi ?
+> L'image httpd embarque uniquement Apache, sans module php...
 3. Utilisez plutôt l'image `lavoweb/php-7.1`. Ca ne fonctionne toujours pas... utilisez les logs pour comprendre et corriger (`docker container logs...`).
+		
+		docker rm -f serveur_web
+		docker run --name serveur_web -p 8080:80 -v $HOME/mondossier:/usr/local/apache2/htdocs/ lavoweb/php-7.1
+
+	> Cette image n'a pas configurer apache pour travailler dans le dossier /usr/local/apache2/htdocs/ mais dans /var/www/html
+
+		docker rm -f serveur_web
+		docker run --name serveur_web -p 8080:80 -v $HOME/mondossier:/var/www/html/ lavoweb/php-7.1
 
 
 ## Avec une base de données
@@ -149,16 +170,51 @@ Notre site web évolue ! il va maintenant afficher une carte. Un clic permet de 
 
 2. Pour respecter le principe d'un seul processus par conteneur, il nous faut lancer un second conteneur pour notre base de données. Utilisez l'image `mariadb`. Vous trouverez des informations sur la configuration de cette image sur [hub.docker.com](https://hub.docker.com/_/mariadb). Configurez la base de données de façon à ce que le code php fonctionne (nom d'utilisateur, mot de passe et base de données).
 
+	> Pour que 2 conteneurs puissent communiquer entre eux en utilisant leur nom et non leur IP, le réseau bridge ne suffit pas. Il faut en créé un qui permettra de faire des résolutions DNS.
+
+		docker rm -f serveur_web
+		docker network create lamp
+		docker run -i -t -d --name database -e MYSQL_ROOT_PASSWORD=dfghjkl -e MYSQL_DATABASE=mymap -e MYSQL_USER=user -e MYSQL_PASSWORD=s3cr3t --net=lamp mariadb
+		docker run -d --name serveur_web -p 8080:80 -v $HOME/mondossier:/var/www/html/ --net lamp lavoweb/php-7.1
+		
+
 3. Avec la commande `docker exec ...`, lancez le client mysql en ligne de commande pour explorer la base de données et observez le contenu de la table point au fur et à mesure des interactions avec la carte.
 
 >  mysql -u LOGIN -D DATABASE --password="PASSWORD"
 
+		docker exec -it database mysql -u user -D mymap --password="s3cr3t" -e 'select * from point;'
+
+
 ## Base de DONNEES
 
 1. Arrêtez et relancez le conteneur mariadb
+
+		docker stop database
+		docker start database
+
 2. Est-ce que les données qui avaient été saisies sont encore présentes ?
+
+		docker exec -it database mysql -u user -D mymap --password="s3cr3t" -e 'select * from point;'
+
 3. Oui
 4. Arrêtez, supprimez et recréez le conteneur mariadb
+
+		docker stop database
+		docker rm database
+		docker run -i -t -d --name database -e MYSQL_ROOT_PASSWORD=dfghjkl -e MYSQL_DATABASE=mymap -e MYSQL_USER=user -e MYSQL_PASSWORD=s3cr3t --net=lamp mariadb
+
 5. Est-ce que les données qui avaient été saisies sont encore présentes ?
+
+	docker exec -it database mysql -u user -D mymap --password="s3cr3t" -e 'select * from point;'
+		
 6. Non
 7. Modifier la commande docker de mariadb pour placer un volume au bon endroit et retentez la suppression et recréation du conteneur mariadb.
+
+		docker stop database
+		docker rm database
+		docker run -i -t -d --name database -e MYSQL_ROOT_PASSWORD=dfghjkl -e MYSQL_DATABASE=mymap -e MYSQL_USER=user -e MYSQL_PASSWORD=s3cr3t --net=lamp -v mesdonnees:/var/lib/mysql mariadb
+		# On ajoute et supprime des points sur la carte
+		docker stop database
+		docker rm database
+		# On actualise la page web pour vérifier l'impossibilité de connection à la base de données
+		docker run -i -t -d --name database -e MYSQL_ROOT_PASSWORD=dfghjkl -e MYSQL_DATABASE=mymap -e MYSQL_USER=user -e MYSQL_PASSWORD=s3cr3t --net=lamp -v mesdonnees:/var/lib/mysql mariadb

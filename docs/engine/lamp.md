@@ -151,7 +151,10 @@ Notre site web évolue ! il va maintenant afficher une carte. Un clic permet de 
 
 3. Avec la commande `docker exec ...`, lancez le client mysql en ligne de commande pour explorer la base de données et observez le contenu de la table point au fur et à mesure des interactions avec la carte.
 
->  mysql -u LOGIN -D DATABASE --password="PASSWORD"
+!!! note
+	```
+	mysql -u LOGIN -D DATABASE --password="PASSWORD"
+	```
 
 ## Base de DONNEES
 

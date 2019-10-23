@@ -27,3 +27,5 @@ pages:
     - GlusterFS: recreation/glusterfs.md
   - Notation: notation.md
 theme: material
+markdown_extensions:
+  - admonition

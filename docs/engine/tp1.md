@@ -10,6 +10,36 @@ Voici également quelques instruction pour l'écriture du Dockerfile :
 - indiquer un nom de contact avec la commande `MAINTAINER`
 - déclarer les volumes où sont stockées les données
 
+```
+FROM tomcat:8
+ARG GEOSERVER_VERSION=2.16.0
+MAINTAINER Thibault Coupin <thibault.coupin@gmail.com>
+EXPOSE 8080
+
+ADD https://freefr.dl.sourceforge.net/project/geoserver/GeoServer/${GEOSERVER_VERSION}/geoserver-${GEOSERVER_VERSION}-war.zip /tmp
+
+RUN mkdir /tmp/geoserver \
+    && unzip /tmp/geoserver-${GEOSERVER_VERSION}-war.zip -d /tmp/geoserver \
+    && mv /tmp/geoserver/geoserver.war /usr/local/tomcat/webapps \
+    && rm -rf /tmp/geoserver*
+```
+
+Explications :
+
+- Avec l'instruction `FROM`, on précise bien le tag `8` car la doc indique que geoserver ne supporte pas la version 9 de java
+- On paramétrise notre Dockerfile, ainsi on pourra changer la version de geoserver au moment de construire l'image. La version par défaut est la 2.16.0
+
+```
+# Contruction de l'image sans préciser de numéro de version
+docker image build --tag geoserver .
+# Contruction de l'image avec numéro de version
+docker image build --tag geoserver:2.15.0 --build-arg GEOSERVER_VERSION=2.15.0 .
+# Lancement d'un conteneur
+docker container run -p 8080:8080 geoserver:2.15.0
+```
+
+**La création d'un volume n'est pas faite ici...**
+
 
 ## Multi-stage build
 

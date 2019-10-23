@@ -188,6 +188,9 @@ Notre site web évolue ! il va maintenant afficher une carte. Un clic permet de 
 		docker exec -it database mysql -u user -D mymap --password="s3cr3t" -e 'select * from point;'
 
 
+		docker exec -it database mysql -u user -D mymap --password="s3cr3t" -e 'select * from point;'
+
+
 ## Base de DONNEES
 
 1. Arrêtez et relancez le conteneur mariadb

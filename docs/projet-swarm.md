@@ -14,7 +14,8 @@ Les notions suivantes seront aussi à utiliser :
 - gestion de projet
 - communication
 
-## Contraintes
+
+## Contraintes
 
 - haute disponibilité de l'application déployée
 - répartition sur l'ensemble des noeuds

@@ -3,11 +3,11 @@
 ## Objectifs
 
 - Mise en place d'un cluster swarm à architecture mixte (ARM + x86_64)
-  - Clustering réseau et stockage
-  - Monitoring
+    - Clustering réseau et stockage
+    - Monitoring
 - Déploiement d'une application web de stockage "cloud" avec édition collaborative et/ou calcul d'itinéraire en ligne
-  - Configuration
-  - Tests
+    - Configuration
+    - Tests
   
 Les notions suivantes seront aussi à utiliser :
 

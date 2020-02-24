@@ -31,8 +31,7 @@ Les notions suivantes seront aussi à utiliser :
 
 ## Jalons
 
-- T+1j : architecture
-- T+2j : cluster fonctionnel
+- T+2j : architecture & cluster fonctionnel
 - T+3,5j : application déployée, scalable et disponible
 - T+4j : présentation de 20-30 min du projet, des décisions prises, des tests réalisés
 - T+4,5j : RetEx

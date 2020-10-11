@@ -3,13 +3,21 @@
 
 Dans ce TP, nous allons créer une image geoserver. Voici la documentation d'installation [https://docs.geoserver.org/latest/en/user/installation/war.html](https://docs.geoserver.org/latest/en/user/installation/war.html).
 
+Geoserver est une application web écrite en java. Elle se déploit sur un serveur `tomcat` (dans le dossier webapps).
+Geoserver utilise un dossier `workspace` comme espace de travail. Elle y stocke sa configuration et ses données.
+
 Voici également quelques instruction pour l'écriture du Dockerfile :
 
 - partir de l'image `tomcat`
 - la commande `ADD` permet d'ajouter des fichiers depuis internet vers l'image
-- indiquer un nom de contact avec la commande `MAINTAINER`
 - déclarer les volumes où sont stockées les données
 
+
+## Un dockerfile pour GRR
+
+GRR est une application php de gestion de ressources partagées (planning de réservation de salle de réunion etc...).
+
+Ecrire un dockerfile basé sur une image php permettant de lancer l'application GRR. La base de donnée est bien sûr en dehors de ce conteneur.
 
 ## Multi-stage build
 

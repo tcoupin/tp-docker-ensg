@@ -7,7 +7,7 @@ L'image à utiliser est nextcloud, disponible sur [https://hub.docker.com/_/next
 - Ajoutez des volumes pour que les données soient préservées lorsque le conteneur est détruit (et vérifiez que c'est bien le cas...)
 
 
-## Etape 2 : utiliser une base de données externe MySql
+## Etape 2 : utiliser une base de données externe MySql ou Postgresql
 
-- Lancez un conteneur MySQL (n'oubliez pas les volumes...)
+- Lancez un conteneur MySQL ou Postgresql (n'oubliez pas les volumes...)
 - Recréez le conteneur nextcloud avec les bonnes options pour qu'à la configuration, vous puissiez lui dire d'utiliser la base de donnée mise en place.

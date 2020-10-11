@@ -11,15 +11,13 @@ pages:
     - "Mise en place de l'environnement": engine/install.md
     - "Les TPs":
       - "TP0 : Hello-world": engine/tp0.md
-      - "TP1 : Serveur LAMP": engine/lamp.md
-      - "TP2 : Dockerfiles": engine/tp1.md
-      - "TP3 : Déployer une application": engine/tp2.md
+      - "TP1 : Serveur LAMP": engine/tp-lamp.md
+      - "TP2 : Déployer une application": engine/tp-deploy.md
+      - "TP3 : Dockerfiles": engine/tp-dockerfile.md
   - Docker Compose:
     - "Présentation": docker-compose.md
     - "Installation": compose/install.md
-    - "Les TPs":
-      - compose/tp1.md
-      - compose/tp2.md
+    - "Les TPs": compose/tp.md
   - Docker swarm: docker-swarm.md
   - Le projet: projet-swarm.md
   - Récréations:

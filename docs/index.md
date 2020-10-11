@@ -2,7 +2,7 @@ Ce support est fourni dans le cadre du cours d'architecture des systèmes d'info
 
 Vous trouverez ici les liens vers les présentations, les documents pour les travaux pratiques et des liens vers quelques exemples.
 
-Partie 1 : TSI-[CG],  22 et 23 octobre 2019
+Partie 1 : TSI-[CG],  20 et 21 octobre 2020
 
 1. [Architecture des systèmes d'informations](asi) (1/4 journée)
     - Rappel sur les SI
@@ -19,7 +19,7 @@ Partie 1 : TSI-[CG],  22 et 23 octobre 2019
     - Le docker-compose.yml
     - Les commandes
 
-Partie 2 : TSI-C, 24 au 28 février 2020
+Partie 2 : TSI-C, ??? 2021
 
 4. [Docker en cluster avec le mode swarm ](docker-swarm) (1/2 journée)
     - Concepts
